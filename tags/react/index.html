@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>Tag: react - Enoch&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Enoch&#039;s Blog"><meta name="msapplication-TileImage" content="/images/avator.jpg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Enoch&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="Enoch&#039;s Blog"><meta property="og:url" content="http://example.com/"><meta property="og:site_name" content="Enoch&#039;s Blog"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:author" content="Enoch"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"blog"},"headline":"Enoch's Blog","image":["/img/og_image.png"],"author":{"@type":"Person","name":"Enoch"},"publisher":{"@type":"Organization","name":"Enoch's Blog","logo":{"@type":"ImageObject","url":"/images/avator.jpg"}},"description":""}</script><link rel="icon" href="/images/avator.jpg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-dark.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/images/avator.jpg" alt="Enoch&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">react</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-05-25T01:19:42.000Z" title="2022/5/25 09:19:42">2022-05-25</time></span><span class="level-item">Updated&nbsp;<time dateTime="2024-03-14T03:42:56.613Z" title="2024/3/14 11:42:56">2024-03-14</time></span><span class="level-item"><a class="link-muted" href="/categories/react/">react</a></span><span class="level-item">12 minutes read (About 1863 words)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/05/25/%E5%85%A8%E6%96%B9%E4%BD%8D%E7%90%86%E8%A7%A3React%E7%B1%BB%E5%BC%8F%E7%BB%84%E4%BB%B6%E6%96%B0%E6%97%A7%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">全方位理解React类式组件新旧生命周期</a></p><div class="content"><p>只有在react类式组件中才会有<code>生命周期</code>的概念,因为 class 组件会创建对应的实例，而函数组件不会(函数式组件是用useEffect来体现生命周期的)。组件实例从被创建到被销毁的过程称为组件的生命周期。<br>我们每一次状态的更改都会执行<code>render()</code>阶段和<code>commit阶段</code>,在新版废弃了一些钩子,又新增了一些钩子,我们从旧版到新版来看每一个钩子,然后分析页面渲染时执行的顺序。</p>
+<h3 id="一、旧版生命周期"><a href="#一、旧版生命周期" class="headerlink" title="一、旧版生命周期"></a><strong>一、旧版生命周期</strong></h3><article class="message is-info"><div class="message-header">
+<p>constructor</p>
+</div><div class="message-body">
+<p>该方法只会执行一次，调用该方法会返回一个组件实例。在这个阶段我们可以对组件<code>this.state</code>进行赋值,也可以直接获取到<code>props</code>,在其他地方我们不能直接赋值,只能通过<code>this.setState</code>进行状态修改</p>
+</div></article>
+
+<article class="message is-info"><div class="message-header">
+<p>componentWillMount（UNSAFE）</p>
+</div><div class="message-body">
+<p>这个钩子我们用的比较少,是在<code>render</code>渲染之前调用,在这个钩子里修改<code>state</code>是不会触发重新渲染页面,因为此时页面还未挂在到Dom上<br>我们一般不会在这里初始化<code>state</code>,一般是在<code>constructor</code>中初始化 <code>state</code>,在<code>componentDidMount</code>发起异步请求</p>
+</div></article>
+
+<article class="message is-info"><div class="message-header">
+<p>render（）</p>
+</div><div class="message-body">
+<p>render 函数是纯函数，也就是对于相同的 <code>state</code> 和 <code>props</code>，它总是返回相同的渲染结果。如果 <code>shouldComponentUpdate</code>(后面会提到) 生命周期钩子返回 <code>false</code>，则 render 方法不会执行。</p>
+</div></article>
+
+<article class="message is-info"><div class="message-header">
+<p>componentDidMount</p>
+</div><div class="message-body">
+<p>在组件挂载之后执行，也只会执行一次,在浏览器更新视图之前调用,在 <code>componentDidMount</code>钩子中调用<code>this.setState</code>,会触发额外的渲染，会再一次调用 render 函数，但是浏览器中视图的更新只会执行一次。<br>我们一般会在这个钩子里发起请求,添加订阅等</p>
+</div></article>
+
+
+<article class="message is-info"><div class="message-header">
+<p>componentWillReceiveProps()（UNSAFE）</p>
+</div><div class="message-body">
+<p>在组件嵌套,传入props时,组件在接收到新的props的时候调用,第一次调用不算,不会更新,可以接收<code>props</code>参数,是父组件传过来<strong>最新</strong>的props</p>
+</div></article>
+
+<article class="message is-info"><div class="message-header">
+<p>shouldComponentUpdate()</p>
+</div><div class="message-body">
+<p>在修改状态后会调用该生命周期,该生命周期的必须有返回值,默认是<code>true</code>,如果改成<code>false</code>则在状态更新后,不会调用后续的<code>componentWillUpdate()</code>,<code>render()</code>,<code>componentDidUpdate()</code>,</p>
+</div></article>
+
+<article class="message is-info"><div class="message-header">
+<p>componentWillUpdate()（UNSAFE）</p>
+</div><div class="message-body">
+<p>在组件即将更新之前调用，如果 <code>shouldComponentUpdate阀门</code> 函数返回 false，则不会调用 componentWillUpdate 方法。<br>这个生命周期钩子和 componentWillMount 类似，调用的时机是相同的，只不过 componentWillMount 在组件首次渲染时执行，而 componentWillUpdate 在组件后续更新时执行。这两个生命周期函数都不经常使用。</p>
+</div></article>
+
+<article class="message is-info"><div class="message-header">
+<p>componentDidUpdate()</p>
+</div><div class="message-body">
+<p>在组件更新后立即调用，首次渲染不会调用该方法。和 componentDidMount 一致，只是 componentDidMount 在首次渲染时调用，而 componentDidUpdate 在后续的组件更新时调用。可以在这个生命周期中直接调用<code> this.setState</code>，<br><code>componentDidUpdate</code> 接收三个参数，分别是 <code>prevProps</code>、<code>prevState</code>、<code>snapshot</code>，即：前一个状态的 props，前一个状态的 state、getSnapshotBeforeUpdate 的返回值。<br>如果组件实现了 <code>getSnapshotBeforeUpdate</code> 生命周期函数，则 <code>getSnapshotBeforeUpdate</code> 的返回值将作为 <code>componentDidUpdate</code> 的第三个参数。<br>使用场景：<br>在这个生命周期方法中，可以对 DOM 进行操作或者进行网络请求。</p>
+</div></article>
+
+<article class="message is-info"><div class="message-header">
+<p>componentWillUnmount()</p>
+</div><div class="message-body">
+<p>这个生命周期函数会在组件卸载以及销毁之前调用。<br>使用场景： 通常用来执行组件的清理操作，例如：清除 timer、取消网络请求、清除订阅等。</p>
+</div></article>
+
+<p><strong>在新版中,这三个钩子被废弃</strong><br><strong>1.componentWillMount<br>2.componentWillReceiveProps<br>3.componentWillUpdate</strong><br>他们很容易被程序员滥用和误用</p>
+<h3 id="二、新版生命周期"><a href="#二、新版生命周期" class="headerlink" title="二、新版生命周期"></a><strong>二、新版生命周期</strong></h3><article class="message is-info"><div class="message-header">
+<p>static getDerivedStateFromProps()</p>
+</div><div class="message-body">
+<p>它会在调用 render 方法之前被调用，不管是在初始挂载时还是在后续组件更新时都会被调用。<br>它是一个<strong>静态方法</strong>，接收 <code>props</code> 和 <code>state</code> 两个参数。<br>它的调用时机和 <code>componentWillMount</code>、<code>componentWillUpdate</code>、<code>componentWillReceiveProps</code> 一样都是在 <code>render</code> 方法被调用之前，它可以作为 componentWillMount、componentWillUpdate 和 componentWillReceiveProps 的替代方案。<br>它可以返回一个对象，用来更新 <code>state</code>，就像它的名字一样，从 props 中获取衍生的 state。如果不需要更新 <code>state</code> 则可以返回 <code>null</code>。<br><code>如果子组件的更新依赖于父组件的props</code>,那么我们可以在这个生命周期中做处理,在封装组件时可以用到</p>
+</div></article>
+
+<article class="message is-info"><div class="message-header">
+<p>static getSnapshotBeforeUpdate()</p>
+</div><div class="message-body">
+<p>此生命周期函数在最近一次渲染提交至 DOM 树之前执行，此时 DOM 树还未改变，我们可以在这里获取 DOM 改变前的信息，例如：更新前 DOM 的滚动位置。<br>它接收两个参数，分别是：<code>prevProps</code>、<code>prevState</code>，上一个状态的 <code>props</code> 和上一个状态的 <code>state</code>。它的返回值将会传递给 <code>componentDidUpdate</code> 生命周期钩子的第三个参数。<br>使用场景： 需要获取更新前 DOM 的信息时。比如state状态修改之前滚动条的位置。</p>
+</div></article></div><a class="article-more button is-small is-size-7" href="/2022/05/25/%E5%85%A8%E6%96%B9%E4%BD%8D%E7%90%86%E8%A7%A3React%E7%B1%BB%E5%BC%8F%E7%BB%84%E4%BB%B6%E6%96%B0%E6%97%A7%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/#more">Read more</a></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/images/avator.jpg" alt="Enoch"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Enoch</p><p class="is-size-6 is-block">有形非易测，无源讵可量。</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>chengdu-SiChuan</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">15</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">8</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Enochbest" target="_blank" rel="noopener">Follow</a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://github.com/Enochbest" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Git-hub</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="2658929241@qq.com" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">E-mail</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/dart/"><span class="tag">dart</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/docker/"><span class="tag">docker</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/es6/"><span class="tag">es6</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/js/"><span class="tag">js</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/react/"><span class="tag">react</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/uniapp/"><span class="tag">uniapp</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/vue/"><span class="tag">vue</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/vue3/"><span class="tag">vue3</span><span class="tag">1</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/dart%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">dart学习</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/docker/"><span class="level-start"><span class="level-item">docker</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/js/"><span class="level-start"><span class="level-item">js</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/react/"><span class="level-start"><span class="level-item">react</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/uniapp/"><span class="level-start"><span class="level-item">uniapp</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/vue/"><span class="level-start"><span class="level-item">vue</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/vue3/"><span class="level-start"><span class="level-item">vue3</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-03-14T06:27:20.000Z">2024-03-14</time></p><p class="title"><a href="/2024/03/14/vue3-ts-%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%9B%A0%E4%B8%BA%E8%B7%AF%E7%94%B1%E5%8A%A0%E8%BD%BD%E6%96%B9%E5%BC%8F%E4%B8%8D%E5%90%8C%E5%AF%BC%E8%87%B4%E7%9A%84%E7%83%AD%E6%9B%B4%E6%96%B0%E5%A4%B1%E6%95%88/">vue3 ts 项目中因为路由加载方式不同导致的热更新失效及解决办法</a></p><p class="categories"><a href="/categories/vue3/">vue3</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-09-09T12:12:41.000Z">2023-09-09</time></p><p class="title"><a href="/2023/09/09/IM%E5%8F%91%E9%80%81%E8%A1%A8%E6%83%85%EF%BC%88%E5%9F%BA%E4%BA%8Equill%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%89/">IM发送表情（基于quill富文本编辑器）</a></p><p class="categories"><a href="/categories/vue/">vue</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-09-07T12:42:20.000Z">2023-09-07</time></p><p class="title"><a href="/2023/09/07/%E5%9C%A8Vue3%E4%B8%AD%E4%BD%BF%E7%94%A8quill%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">在Vue3中使用quill富文本编辑器</a></p><p class="categories"><a href="/categories/vue/">vue</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-02-28T08:35:30.000Z">2023-02-28</time></p><p class="title"><a href="/2023/02/28/vue-element%E5%AE%9E%E7%8E%B0%E6%A8%AA%E5%90%91%E6%A0%91%E7%8A%B6%E8%A1%A8%E6%A0%BC%E7%BB%84%E4%BB%B6/">vue+element实现横向树状表格组件</a></p><p class="categories"><a href="/categories/vue/">vue</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-12-27T06:18:19.000Z">2022-12-27</time></p><p class="title"><a href="/2022/12/27/%E5%88%A9%E7%94%A8MessageChannel%E6%B7%B1%E6%8B%B7/">利用MessageChannel深拷贝</a></p><p class="categories"><a href="/categories/js/">js</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/03/"><span class="level-start"><span class="level-item">March 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/09/"><span class="level-start"><span class="level-item">September 2023</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/02/"><span class="level-start"><span class="level-item">February 2023</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/12/"><span class="level-start"><span class="level-item">December 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/11/"><span class="level-start"><span class="level-item">November 2022</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/10/"><span class="level-start"><span class="level-item">October 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/09/"><span class="level-start"><span class="level-item">September 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/08/"><span class="level-start"><span class="level-item">August 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/07/"><span class="level-start"><span class="level-item">July 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/05/"><span class="level-start"><span class="level-item">May 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/01/"><span class="level-start"><span class="level-item">January 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/images/avator.jpg" alt="Enoch&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2024 Enoch</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">Visited by <span id="busuanzi_value_site_uv">0</span> users</span></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
